@@ -41,27 +41,26 @@ return [
             'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
         ],
 
-        'mysql' => [
-            'driver' => 'mysql',
-            'url' => env('DATABASE_URL'),
-            'host' => env('AZURE_MYSQL_HOST', '127.0.0.1'),
-            'port' => env('AZURE_MYSQL_PORT', '3306'),
-            'database' => env('AZURE_MYSQL_DBNAME', 'forge'),
-            'username' => env('AZURE_MYSQL_USERNAME', 'forge'),
-            'password' => env('AZURE_MYSQL_PASSWORD', ''),
-            'unix_socket' => env('DB_SOCKET', ''),
-            'charset' => 'utf8mb4',
-            'collation' => 'utf8mb4_unicode_ci',
-            'prefix' => '',
-            'prefix_indexes' => true,
-            'strict' => true,
-            'engine' => null,
-            'options' => extension_loaded('pdo_mysql') ? array_filter([
-                PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
-                // Optional: disable server cert validation for dev only
-                PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => env('MYSQL_ATTR_SSL_VERIFY_SERVER_CERT', false),
-            ]) : [],
-        ],
+    'mysql' => [
+        'driver' => 'mysql',
+        'url' => env('DATABASE_URL'),
+        'host' => env('AZURE_MYSQL_HOST', '127.0.0.1'),
+        'port' => env('AZURE_MYSQL_PORT', '3306'),
+        'database' => env('AZURE_MYSQL_DBNAME', 'forge'),
+        'username' => env('AZURE_MYSQL_USERNAME', 'forge'),
+        'password' => env('AZURE_MYSQL_PASSWORD', ''),
+        'unix_socket' => env('DB_SOCKET', ''),
+        'charset' => 'utf8mb4',
+        'collation' => 'utf8mb4_unicode_ci',
+        'prefix' => '',
+        'prefix_indexes' => true,
+        'strict' => true,
+        'engine' => null,
+        'options' => extension_loaded('pdo_mysql') ? array_filter([
+            PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
+         ]) : [],
+    ],
+
 
 
         'pgsql' => [
